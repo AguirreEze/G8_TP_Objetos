@@ -1,5 +1,3 @@
-
-
 object fender {
 
 	var valor = 10

@@ -14,8 +14,4 @@ object trastienda {
 	method esConcurrido(unDia){
 		return self.capacidad(unDia)>5000
 	}
-	
-	
-	
-
 }
