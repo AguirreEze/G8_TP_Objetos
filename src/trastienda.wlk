@@ -3,7 +3,7 @@ object trastienda {
 	var primerPiso=300
 	
 	method capacidad(unDia){
-		if(unDia=="sabado"){
+		if(unDi.dayOfWeek() == 6){             //Probar ésta linea
 			return plantaBaja+primerPiso 
 		}else{
 			return plantaBaja 
