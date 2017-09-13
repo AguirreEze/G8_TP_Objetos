@@ -1,4 +1,3 @@
-
 class Presentacion {
 	
 	var dia
@@ -12,25 +11,19 @@ class Presentacion {
 		predio=unPredio
 		cantantes=unosCantantes
 	}
-
-	/*method fechaMes(){
-		var mesDia = fecha%10000
-		return mesDia*100 
-	}*/
 	
 	method cantaSolo(unCantante){
 		return cantantes.contains(unCantante)&&cantantes.size()==1
 	}
+	
 	method costoDePresentacion(){
-		return cantantes.sum({
-			cantante=>cantante.costoDePresentacion(self)
-		})
-		
+		return cantantes.sum({cantante=>cantante.costoDePresentacion(self)})
 		
 	}
 	method fecha(){
 		return fecha
 	}
+	
 	method esConcurrido(){
 		return predio.esConcurrido(dia)
 	}

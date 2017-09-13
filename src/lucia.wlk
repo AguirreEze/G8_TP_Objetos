@@ -1,5 +1,3 @@
-
-
 object lucia {
 	var habilidad =70
 	var grupo="pimpinela"
@@ -19,11 +17,7 @@ object lucia {
 	method serSolista(){
 		grupo=null
 	}
-	
-	/*method asignarHabilidad(unValor){
-		habilidad=unValor
-	}*/
-	
+
 	method interpretaBien(unaCancion){
 		return unaCancion.contieneLaPalabra("familia")
 	}
@@ -35,9 +29,4 @@ object lucia {
 			return 400
 		}
 	}
-	
-	/*method ponerEnUnaBanda(unaBanda){
-		grupo=unaBanda
-	}*/
-	
 }

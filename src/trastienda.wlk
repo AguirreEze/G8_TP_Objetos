@@ -1,4 +1,3 @@
-
 object trastienda {
 	var plantaBaja =400
 	var primerPiso=300

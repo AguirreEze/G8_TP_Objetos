@@ -1,8 +1,6 @@
-
 object gibson {
 	var valor = 15
 	var estado = true
-
 	
 	method dameTuValor(){
 		if (estado){
@@ -19,6 +17,4 @@ object gibson {
 	method romperGuitarra(){
 		estado=false
 	}
-
-
 }
