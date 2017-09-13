@@ -9,7 +9,19 @@ import trastienda.*
 import Presentacion.*
 
 describe "test para el musico luis alberto" {
+	var laFamilia
+	var cisne
+	var presentacionLunaPark
+	var presentacionTrastienda
+	
+	fixture{
+		laFamilia= new Cancion("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		cisne= new Cancion("cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+		presentacionLunaPark = new Presentacion("jueves",20170420,lunaPark,#{joaquin,luisAlberto,lucia})
+		presentacionTrastienda = new Presentacion("miercoles",20171115,trastienda,#{joaquin,luisAlberto,lucia})
 
+	}
+	
 	test"saber la habilidad si esta tocando su fender, este deberia ser 80"{
 		assert.equals(80, luisAlberto.saberHabilidad(fender))
 	}
@@ -26,23 +38,19 @@ describe "test para el musico luis alberto" {
 	}
 	
 	test"saber si luis Alberto interpreta bien la cancion la familia, deberia poder"{
-		var laFamilia= new Cancion("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		assert.that(luisAlberto.interpretaBien(laFamilia))
 	}
 	
 	test"queremos saber si luis alberto interpreta bien Cisne, deberia poder"{
-		var cisne= new Cancion("cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
 		assert.that(luisAlberto.interpretaBien(cisne))
 	}
 
 	test"queremos saber cuanto cobra luis por la presentacion en luna park, serian 1000 por ser antes de septiempre"{
-		var unaPresentacion = new Presentacion("jueves",20170420,lunaPark,#{joaquin,luisAlberto,lucia})
-		assert.equals(1000, luisAlberto.costoDePresentacion(unaPresentacion))
+		assert.equals(1000, luisAlberto.costoDePresentacion(presentacionLunaPark))
 	}
 	
 	test"queremos saber cuanto cobra luis por la presentacion en la trastienda, serian 1200 por ser despues de septiempre"{
-		var unaPresentacion = new Presentacion("miercoles",20171115,trastienda,#{joaquin,luisAlberto,lucia})
-		assert.equals(1200, luisAlberto.costoDePresentacion(unaPresentacion))
+		assert.equals(1200, luisAlberto.costoDePresentacion(presentacionTrastienda))
 	}
 
 
