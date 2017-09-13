@@ -1,9 +1,10 @@
 object trastienda {
 	var plantaBaja =400
 	var primerPiso=300
+	var unDia = new Date (año,mes,dia)
 	
 	method capacidad(unDia){
-		if(unDi.dayOfWeek() == 6){             //Probar ésta linea
+		if(unDia.dayOfWeek() == 6){             //Probar ésta linea
 			return plantaBaja+primerPiso 
 		}else{
 			return plantaBaja 
