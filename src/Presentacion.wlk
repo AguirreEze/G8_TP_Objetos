@@ -22,10 +22,10 @@ class Presentacion {
 		return cantantes.contains(unCantante)&&cantantes.size()==1
 	}
 	method costoDePresentacion(){
-		var costos =cantantes.map({
+		return cantantes.sum({
 			cantante=>cantante.costoDePresentacion(self)
 		})
-		return costos.sum()
+		
 		
 	}
 	method fecha(){
