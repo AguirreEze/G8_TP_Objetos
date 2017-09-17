@@ -2,7 +2,7 @@ object fender {
 
 	var valor = 10
 
-	method dameTuValor(){
+	method valor(){
 		return valor
 	}
 
