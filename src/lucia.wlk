@@ -1,13 +1,10 @@
 object lucia {
 	var habilidad =70
-	var grupo="pimpinela"
+	var grupo=true
 	
-	method estaEnGrupo(){
-		return grupo!=null
-	}
-	
-	method saberHabilidad(){
-		if(self.estaEnGrupo()){
+
+	method habilidad(){
+		if(grupo()){
 			return habilidad-20
 		}else{
 			return habilidad
@@ -15,7 +12,7 @@ object lucia {
 	}
 	
 	method serSolista(){
-		grupo=null
+		grupo=false
 	}
 
 	method interpretaBien(unaCancion){
