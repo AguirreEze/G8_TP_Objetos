@@ -2,7 +2,7 @@ object gibson {
 	var valor = 15
 	var estado = true
 	
-	method dameTuValor(){
+	method valor(){
 		if (estado){
 			return valor
 		}else{
@@ -10,7 +10,7 @@ object gibson {
 		}
 	}
 	
-	method dameTuEstado(){
+	method estado(){
 		return estado
 	}
 	
