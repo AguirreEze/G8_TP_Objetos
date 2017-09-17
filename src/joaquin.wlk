@@ -2,7 +2,7 @@ object  joaquin {
 	var habilidad =20
 	var grupo = true
 	
-	method saberHabilidad(){
+	method habilidad(){
 		if(grupo){
 			return habilidad+5
 		}else{
