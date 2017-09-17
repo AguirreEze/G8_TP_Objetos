@@ -23,17 +23,17 @@ describe "test para el musico luis alberto" {
 	}
 	
 	test"saber la habilidad si esta tocando su fender, este deberia ser 80"{
-		assert.equals(80, luisAlberto.saberHabilidad(fender))
+		assert.equals(80, luisAlberto.habilidad(fender))
 	}
 	
 	test"saber la habilidad de luis alberto si toca una gibson sana"{
-		assert.equals(100, luisAlberto.saberHabilidad(gibson))
+		assert.equals(100, luisAlberto.habilidad(gibson))
 		
 	}
 	
 	test"saber la habilidad de luis alberto si toca una gibson no sana"{
 		gibson.romperGuitarra()
-		assert.equals(40, luisAlberto.saberHabilidad(gibson))
+		assert.equals(40, luisAlberto.habilidad(gibson))
 		
 	}
 	
