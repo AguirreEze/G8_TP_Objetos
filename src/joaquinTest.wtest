@@ -20,12 +20,12 @@ describe "test del cantante joaquin"{
 	}
 	
 	test"saber cual es la habilidad de joaquin si esta en un grupo, debería ser 25"{
-		assert.equals(25, joaquin.saberHabilidad())
+		assert.equals(25, joaquin.habilidad())
 	}
 	
 	test"saber cual es la habilidad de joaqun si fuera solista, debería ser 20"{
 		joaquin.serSolista()
-		assert.equals(20, joaquin.saberHabilidad())
+		assert.equals(20, joaquin.habilidad())
 	}
 	
 	test"saber si joaquin interpreta bien la cancion la familia"{
