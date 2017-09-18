@@ -4,7 +4,7 @@ object lucia {
 	
 
 	method habilidad(){
-		if(grupo()){
+		if(grupo){
 			return habilidad-20
 		}else{
 			return habilidad
