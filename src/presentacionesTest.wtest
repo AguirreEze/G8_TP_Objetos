@@ -9,25 +9,27 @@ import Presentacion.*
 describe "test para el precentaciones" {
 	var presentacionLunaPark
 	var presentacionTrastienda
-	
+	var fecha
 	fixture{
-		presentacionLunaPark= new Presentacion("jueves",20170420,lunaPark,#{joaquin,luisAlberto,lucia})
-		presentacionTrastienda = new Presentacion("domingo",20171115,trastienda,#{joaquin,luisAlberto,lucia})
+		presentacionLunaPark= new Presentacion(20,04,2017,lunaPark,#{joaquin,luisAlberto,lucia})
+		presentacionTrastienda = new Presentacion(15,11,2017,trastienda,#{joaquin,luisAlberto,lucia})
 	}
 	
-	test "Queremos saber el costo de la presentación del Luna Park,  debe dar 1.550 (50 de Joaquín, 500 de Lucía y 1.000 de Luis Alberto)" {
+	test "Queremos saber el costo de la presentaciÃ³n del Luna Park,  debe dar 1.550 (50 de JoaquÃ­n, 500 de LucÃ­a y 1.000 de Luis Alberto)" {
 		assert.equals(1550, presentacionLunaPark.costoDePresentacion())
 
 	}
-	test "Queremos saber el costo de la presentación de la Trastienda el 15/11/2017, 1650  (50 de Joaquín, 400 de Lucía y 1.200 de Luis Alberto)"{
+	test "Queremos saber el costo de la presentaciÃ³n de la Trastienda el 15/11/2017, 1650  (50 de JoaquÃ­n, 400 de LucÃ­a y 1.200 de Luis Alberto)"{
 		assert.equals(1650, presentacionTrastienda.costoDePresentacion())
 	}
 
-	test "Saber la capacidad de La Trastienda para el 05 de agosto del 2017,debería dar 700 (porque es sábado)"{
-		assert.equals(700, trastienda.capacidad("sabado"))
+	test "Saber la capacidad de La Trastienda para el 05 de agosto del 2017,deberÃ­a dar 700 (porque es sÃ¡bado)"{
+		fecha=new Date(05,08,2017)
+		assert.equals(700, trastienda.capacidad(fecha))
 	
 	}
-	test "Saber la capacidad de La Trastienda para el 08 de agosto del 2017,debería dar 400 (porque no es sábado)"{
-		assert.equals(400, trastienda.capacidad("martes"))
+	test "Saber la capacidad de La Trastienda para el 08 de agosto del 2017,deberÃ­a dar 400 (porque no es sÃ¡bado)"{
+		fecha=new Date(08,08,2017)
+		assert.equals(400, trastienda.capacidad(fecha))
 	}
 	}
