@@ -30,8 +30,3 @@ object luisAlberto {
 
 }
 
-	method interpretaBien(unaCancion){
-		return true
-	}
-
-}
