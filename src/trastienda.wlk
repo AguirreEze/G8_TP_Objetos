@@ -2,14 +2,16 @@ object trastienda {
 	var plantaBaja =400
 	var primerPiso=300
 	
-	method capacidad(unDia){
-		if(unDia == "sabado"){             //Probar ésta linea
+	method capacidad(unaFecha){
+		if(unaFecha.dayOfWeek() ==6){            
 			return plantaBaja+primerPiso 
 		}
 			return plantaBaja 
 	}
 	
-	method esConcurrido(unDia){
-		return self.capacidad(unDia)>5000
+	
+	method esConcurrido(unaFecha){
+		return self.capacidad(unaFecha)>5000
 	}
 }
+
