@@ -1,10 +1,15 @@
+
+
 object lucia {
 	var habilidad =70
 	var grupo=true
 	
-
+	method grupo(){
+		return grupo
+	}
+	
 	method habilidad(){
-		if(grupo){
+		if(self.grupo()){
 			return habilidad-20
 		}else{
 			return habilidad
@@ -14,7 +19,9 @@ object lucia {
 	method serSolista(){
 		grupo=false
 	}
-
+	
+	
+	
 	method interpretaBien(unaCancion){
 		return unaCancion.contieneLaPalabra("familia")
 	}
@@ -26,4 +33,6 @@ object lucia {
 			return 400
 		}
 	}
+	
+	
 }
