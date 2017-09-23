@@ -4,12 +4,16 @@ class Cancion {
 	var duracion
 	var letra
 	
+	
 	constructor(unNombre,unaDuracion,unaLetra){
 		nombre=unNombre
 		duracion=unaDuracion
 		letra=unaLetra
 	}
 	
+	method esCorto(){
+		return duracion<180
+	}
 	method duracion(){
 		return duracion
 	}

@@ -6,15 +6,9 @@ class VocalistaPupular inherits Musico{
 	var esaPalabra
 	
 	constructor(unaHabilidad,estaEnGrupo,susAlbumes,unaPalabra)= super(unaHabilidad,estaEnGrupo,susAlbumes){
-	 	habilidad = unaHabilidad
-		grupo = estaEnGrupo
-		albumes = susAlbumes
 		esaPalabra=unaPalabra
 	}
 	
-	method grupo(){
-		return grupo
-	}
 	
 	override method interpretaBien(unaCancion){
 		return unaCancion.contieneLaPalabra(esaPalabra)
