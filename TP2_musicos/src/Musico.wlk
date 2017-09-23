@@ -1,46 +1,47 @@
 //musico generico     SUPERCLASE
-
+import Album.*
 class Musico {
 	var habilidad
 	var grupo
-	var albumes
-	var habilidadAAumentar
+	var albumes=#{}
 	
 	constructor(unaHabilidad,estaEnGrupo,susAlbumes){
 		habilidad = unaHabilidad
 		grupo = estaEnGrupo
 		albumes = susAlbumes
 	}
-
+	
+	method grupo(){
+		return grupo
+	}
+	
+	method habilidad(){
+		return habilidad
+	}
 
 	method interpretaBien(unaCancion){
 		return unaCancion.tieneMasDe(300)
 	}
 
-	method habilidad(){
-		return habilidad
+	method esMinimalista(){
+		return albumes.all({album=>album.minimalista()})
 	}
 	
-	method esMinimalista(){
-		
-	}
-	method modificarHabilidad(){
-		if(grupo){
-			return habilidad+habilidadAAumentar
-		}else{
-			return habilidad
-		}
-	}
 	method serSolista(){
 		grupo=false
 	}
 	
-	method costoDePresentacion(unaPresentacion){
-		if(unaPresentacion.cantaSolo(self)){
-			return 100
-		}else{
-			return 50
-		}
+	method duracionDeLaObra(){
+		return albumes.sum({album=>album.duracion()
+		})
+	}
+	
+	method cancionMasLarga(){
+		return albumes.max({cancion=>cancion.cantidadLetras()}).map({album=>album.cancionMasLarga()})
+	}
+	
+	method laPego(){
+		albumes.all({album=>album.exitoso()})
 	}
 }
 
