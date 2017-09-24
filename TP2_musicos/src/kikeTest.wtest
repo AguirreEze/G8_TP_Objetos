@@ -16,6 +16,4 @@ describe "test respectivos a Joaquin" {
 		assert.equals(0, kike.duracionDeLaObra()) 
 	}
 	
-
-		
 }
