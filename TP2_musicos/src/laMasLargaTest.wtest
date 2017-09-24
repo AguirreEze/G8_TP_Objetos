@@ -1,0 +1,42 @@
+import Musico.*
+import Cancion.*
+import Album.*
+
+
+describe "Testeando qué canción es más larga de un álbum" {
+
+//Albumes:	
+	var especialLaFamilia
+	var laSole
+	var paraLosArboles
+// Canciones:	
+	var laFamilia 
+	var cisne
+	var almaDeDiamante 
+	var eres
+	var corazonAmericano
+	
+	fixture {
+	laFamilia = new Cancion ("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+	eres = new Cancion ("eres",145,"Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.")
+	corazonAmericano = new Cancion ("Corazon Americano",154,"Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos")
+	cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar") 	
+	almaDeDiamante = new Cancion ("Alma de Diamante",216,"Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante")	
+	
+	especialLaFamilia = new Album("Especial La Familia",#{laFamilia},"1992,06,17",100000,89000)	
+	laSole = new Album("La Sole",#{eres,corazonAmericano},"2005,02,04",200000,130000)
+	paraLosArboles = new Album ("Para los Arboles",#{cisne,almaDeDiamante},"2003,03,31",50000,49000)
+		
+	}
+		
+	test "Saber qué canción es más larga del álbum : Para los árboles, debería dar alma de diamante" {
+		assert.equals(almaDeDiamante, paraLosArboles.cancionMasLarga()) 
+	}
+	
+	test " Saber cuál es la canción más larga del álbum :La Sole ,debería dar eres" {
+		assert.equals( eres, laSole.cancionMasLarga())
+	}
+	test "Saber cuál es la canción más larga del álbum Especial La Familia, debería dar La familia" {
+		assert.equals (laFamilia, especialLaFamilia.cancionMasLarga())
+	}
+}
