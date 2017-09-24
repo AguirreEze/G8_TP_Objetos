@@ -1,0 +1,37 @@
+import Musico.*
+import Cancion.*
+import Album.*
+import MusicoDeGrupo.*
+
+describe "test respectivos a Joaquin" {
+	
+	var especialLaFamilia
+	var laFamilia 
+	var joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5)	
+	
+	fixture{
+			
+	laFamilia = new Cancion ("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+	especialLaFamilia = new Album("Especial La Familia",#{laFamilia},"1992,06,17",100000,89000)
+	}
+	
+	test "Saber si Joaquín es minimalista, debería dar que no" {
+		assert.notThat(joaquin.esMinimalista())
+	}
+
+	test "Saber si Joaquín la pegó, tiene que dar que si" {
+		assert.that(joaquin.laPego())
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
