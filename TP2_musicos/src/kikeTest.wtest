@@ -1,0 +1,21 @@
+import Musico.*
+import Cancion.*
+import Album.*
+import MusicoDeGrupo.*
+
+	
+describe "test respectivos a Joaquin" {
+	 
+	var kike
+	
+	fixture{
+	kike = new MusicoDeGrupo (60,true,#{},20)	
+	}
+	
+	test "Sabes cuantos segundos dura la obra de Kike, debería dar 0" {
+		assert.equals(0, kike.duracionDeLaObra()) 
+	}
+	
+
+		
+}
