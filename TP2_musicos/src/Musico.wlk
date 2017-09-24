@@ -41,7 +41,7 @@ class Musico {
 	}
 	
 	method laPego(){
-		albumes.all({album=>album.exitoso()})
+		return albumes.all({album=>album.exitoso()})
 	}
 }
 
