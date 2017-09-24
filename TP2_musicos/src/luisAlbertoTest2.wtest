@@ -24,7 +24,7 @@ describe "test segunda entrega de Luis Alberto"{
 	}
 
 	test "luisAlberto es minimalista"{
-		assert.that(!luisAlberto.esMinimalista())
+		assert.notThat(luisAlberto.esMinimalista())
 	}
 	test "cuanto dura la obra de luisAlberto"{
 		assert.equals(703, luisAlberto.duracionDeLaObra())
