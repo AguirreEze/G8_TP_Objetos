@@ -1,8 +1,8 @@
 import Musico.*
-//lucia
-class VocalistaPupular inherits Musico{
+
+class VocalistaPopular inherits Musico{
 	
-	var habilidadAModificar=20        //SE PUEDE INSTANCIAR UNA VARIABLE DE LA CLASE SUPER ACÁ?
+	var habilidadAModificar=20        
 	var esaPalabra
 	
 	constructor(unaHabilidad,estaEnGrupo,susAlbumes,unaPalabra)= super(unaHabilidad,estaEnGrupo,susAlbumes){
@@ -24,7 +24,7 @@ class VocalistaPupular inherits Musico{
 	
 	override method habilidad(){
 		if(grupo){
-			return super()+20
+			return super()+habilidadAModificar
 		}else{
 			return habilidad
 		}
