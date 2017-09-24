@@ -37,7 +37,11 @@ describe "test sobre los musicos"{
 	almaDeDiamante = new Cancion ("Alma de Diamante",216,"Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante")
 	crisantemo = new Cancion ("Crisantemo",175,"Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo")
 			
-	especialLaFamilia = new Album ("Especial La Familia",#{},)
+	especialLaFamilia = new Album("Especial La Familia",#{laFamilia},"17/06/1992",100000,89000)
+	laSole = new Album("La Sole",#{eres,corazonAmericano},"04/02/2005",200000,130000)
+	paraLosArboles = new Album ("Para los Arboles",#{cisne,almaDeDiamante},31/03/2003,50000,49000)
+	justCrisantemo = new Album ("Just Crisantemo",#{crisantemo},05/12/2007,28000,27500)
+	
 	}
 		
 	
