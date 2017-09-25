@@ -43,6 +43,9 @@ class Musico {
 	method laPego(){
 		return albumes.all({album=>album.exitoso()})
 	}
+	method cancionesConPalabra(unaPalabra){
+		return albumes.flatMap({album=> album.canciones()}).filter({cancion => cancion.contieneLaPalabra(unaPalabra)})
+	}
 }
 
 

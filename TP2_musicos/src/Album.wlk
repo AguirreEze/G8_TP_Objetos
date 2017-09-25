@@ -30,4 +30,7 @@ class Album {
 	method cancionMasLarga(){
 		return canciones.max({cancion=>cancion.duracion()})
 	}
+	method canciones(){
+		return canciones
+	}
 }
