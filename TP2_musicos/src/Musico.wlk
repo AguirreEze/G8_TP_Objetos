@@ -32,8 +32,7 @@ class Musico {
 	}
 	
 	method duracionDeLaObra(){
-		return albumes.sum({album=>album.duracion()
-		})
+		return albumes.sum({album=>album.duracion()})
 	}
 	
 	method cancionMasLarga(){
@@ -47,5 +46,3 @@ class Musico {
 		return albumes.flatMap({album=> album.canciones()}).filter({cancion => cancion.contieneLaPalabra(unaPalabra)})
 	}
 }
-
-

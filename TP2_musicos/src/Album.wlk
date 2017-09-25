@@ -1,4 +1,4 @@
-/** First Wollok example */
+import Cancion.*
 class Album {
 	var titulo
 	var canciones=#{}
@@ -28,7 +28,7 @@ class Album {
 	}
 	
 	method cancionMasLarga(){
-		return canciones.max({cancion=>cancion.duracion()})
+		return canciones.max({cancion=>cancion.cantidadLetras()})
 	}
 	method canciones(){
 		return canciones
