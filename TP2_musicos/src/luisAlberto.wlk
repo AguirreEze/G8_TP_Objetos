@@ -13,7 +13,7 @@ object luisAlberto inherits Musico(8,false,#{})  {
 	}
 	
 	method valorViejo(unaPresentacion){
-		valorViejo=unaPresentacion.fecha()<09
+		valorViejo=unaPresentacion.mes()<09
 	}
 	method costoDePresentacion(unaPresentacion){
 		self.valorViejo(unaPresentacion)
