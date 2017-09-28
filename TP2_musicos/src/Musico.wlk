@@ -2,17 +2,17 @@
 import Album.*
 class Musico {
 	var habilidad
-	var grupo
+	var estaEnGrupo
 	var albumes=#{}
 	
-	constructor(unaHabilidad,estaEnGrupo,susAlbumes){
+	constructor(unaHabilidad,unGrupo,susAlbumes){
 		habilidad = unaHabilidad
-		grupo = estaEnGrupo
+		estaEnGrupo = unGrupo
 		albumes = susAlbumes
 	}
 	
 	method grupo(){
-		return grupo
+		return estaEnGrupo
 	}
 	
 	method habilidad(){
@@ -28,7 +28,7 @@ class Musico {
 	}
 	
 	method serSolista(){
-		grupo=false
+		estaEnGrupo=false
 	}
 	
 	method duracionDeLaObra(){
