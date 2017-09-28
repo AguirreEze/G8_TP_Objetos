@@ -2,12 +2,9 @@ import fender.*
 import gibson.*
 import Musico.*
 
-object luisAlberto inherits Musico(unaHabilidad,estaEnGrupo,susAlbumes)  {
+object luisAlberto inherits Musico(8,false,#{})  {
 	
 	var valorViejo=true
-	var unaHabilidad=8
-	var estaEnGrupo=false
-	var susAlbumes=#{}
 	
 	
 	

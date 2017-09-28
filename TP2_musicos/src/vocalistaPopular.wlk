@@ -23,7 +23,7 @@ class VocalistaPopular inherits Musico{
 	}
 	
 	override method habilidad(){
-		if(grupo){
+		if(estaEnGrupo){
 			return super()+habilidadAModificar
 		}else{
 			return habilidad

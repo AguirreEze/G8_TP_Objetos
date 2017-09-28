@@ -8,7 +8,7 @@ class  MusicoDeGrupo inherits Musico{
 	}
 	
 	override method habilidad(){
-		if(grupo){
+		if(estaEnGrupo){
 			return super()+habilidadAAumentar
 		}else{
 			return habilidad
