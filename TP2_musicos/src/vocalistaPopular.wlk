@@ -2,7 +2,7 @@ import Musico.*
 
 class VocalistaPopular inherits Musico{
 	
-	var habilidadAModificar=20        
+	var habilidadAModificar=-20        
 	var esaPalabra
 	
 	constructor(unaHabilidad,estaEnGrupo,susAlbumes,unaPalabra)= super(unaHabilidad,estaEnGrupo,susAlbumes){
