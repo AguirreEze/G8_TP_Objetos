@@ -36,7 +36,7 @@ class Musico {
 	}
 	
 	method cancionMasLarga(){
-		return albumes.max({cancion=>cancion.cantidadLetras()}).map({album=>album.cancionMasLarga()})
+		return albumes.max({album=>album.cancionMasLarga()})
 	}
 	
 	method laPego(){
