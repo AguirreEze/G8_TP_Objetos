@@ -4,12 +4,16 @@ class Cancion {
 	var duracion
 	var letra
 	
+	
 	constructor(unNombre,unaDuracion,unaLetra){
 		nombre=unNombre
 		duracion=unaDuracion
 		letra=unaLetra
 	}
 	
+	method esCorto(){
+		return duracion<180
+	}
 	method duracion(){
 		return duracion
 	}
@@ -21,6 +25,9 @@ class Cancion {
 	method letra(){
 		return letra
 	}
+	method cantidadLetras(){
+		return letra.size()
+	}
 	
 	method contieneLaPalabra(unaPalabra) {
 		return  letra.contains(unaPalabra)
@@ -30,3 +37,10 @@ class Cancion {
 		return duracion > unValor
 	}
 }
+
+
+
+
+
+
+

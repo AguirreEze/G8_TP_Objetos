@@ -1,10 +1,11 @@
 import fender.*
 import gibson.*
+import Musico.*
 
-object luisAlberto {
+object luisAlberto inherits Musico(8,false,#{})  {
 	
-	var habilidad =8
 	var valorViejo=true
+	
 	
 	
 	method habilidad(unaGuitarra){
@@ -12,9 +13,8 @@ object luisAlberto {
 	}
 	
 	method valorViejo(unaPresentacion){
-		valorViejo=unaPresentacion.mes()<=09
+		valorViejo=unaPresentacion.mes()<09
 	}
-	
 	method costoDePresentacion(unaPresentacion){
 		self.valorViejo(unaPresentacion)
 		if(valorViejo){
@@ -23,10 +23,9 @@ object luisAlberto {
 			return 1200
 		}
 	}
-	
-	method interpretaBien(unaCancion){
+
+	override method interpretaBien(unaCancion){
 		return true
 	}
 
 }
-

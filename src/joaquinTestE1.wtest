@@ -3,7 +3,7 @@ import Cancion.*
 import lunaPark.*
 import trastienda.*
 import Presentacion.*
-import vocalistaPopular.*
+import VocalistaPopular.*
 import MusicoDeGrupo.*
 import Album.*
 
