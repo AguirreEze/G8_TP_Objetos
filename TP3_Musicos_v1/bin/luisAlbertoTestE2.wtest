@@ -1,0 +1,41 @@
+//import luisAlberto.*
+import Cancion.*
+import Album.*
+import Musico.*
+
+describe "test segunda entrega de Luis Alberto"{
+	var cisne
+	var almaDeDiamante
+	var crisantemo
+	var paraLosArboles
+	var justCrisantemo
+	var luisAlberto
+	fixture{
+	cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar") 	
+	almaDeDiamante = new Cancion ("Alma de Diamante",216,"Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante")
+	crisantemo = new Cancion ("Crisantemo",175,"Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo")
+	
+	paraLosArboles = new Album ("Para los Arboles",#{cisne,almaDeDiamante},new Date (31,03,2003),50000,49000)
+	justCrisantemo = new Album ("Just Crisantemo",#{crisantemo},new Date (05,12,2007),28000,27500)
+	
+	luisAlberto = new Musico (8, false, #{paraLosArboles, justCrisantemo})
+//	luisAlberto.agregarAlbum(paraLosArboles)
+//	luisAlberto.agregarAlbum(justCrisantemo)
+	}
+
+	test "luisAlberto es minimalista"{
+		assert.notThat(luisAlberto.esMinimalista())
+	}
+	test "cuanto dura la obra de luisAlberto"{
+		assert.equals(703, luisAlberto.duracionDeLaObra())
+	}
+	test "cuales canciones de luis Alberto tienen la palabra cielo"{
+		assert.that(luisAlberto.cancionesConPalabra("cielo").contains(almaDeDiamante)&&luisAlberto.cancionesConPalabra("cielo").contains(almaDeDiamante))
+	}
+	test "cuales canciones de luis Alberto tienen la palabra pujante"{
+		assert.equals(#{},luisAlberto.cancionesConPalabra("pujante"))
+	}
+	test "luisAlberto la pego"{
+		assert.that(luisAlberto.laPego())
+	}
+}
