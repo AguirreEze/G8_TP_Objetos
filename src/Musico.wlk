@@ -11,6 +11,9 @@ class Musico {
 		albumes = susAlbumes
 	}
 	
+	method habilidadMayorA(unValor){
+		return habilidad >=unValor
+	}
 	method grupo(){
 		return estaEnGrupo
 	}
@@ -20,11 +23,19 @@ class Musico {
 	}
 
 	method interpretaBien(unaCancion){
-		return unaCancion.tieneMasDe(300)
+		return self.esDeMiAutoria(unaCancion)||habilidad>60
+	}
+	
+	method esDeMiAutoria(unaCancion){
+		return albumes.any({album=>album.contains(unaCancion)})
 	}
 
 	method esMinimalista(){
 		return albumes.all({album=>album.minimalista()})
+	}
+	
+	method esCompositor(){
+		return !albumes.isEmpty()
 	}
 	
 	method serSolista(){

@@ -23,6 +23,8 @@ class  MusicoDeGrupo inherits Musico{
 		}
 	}
 
-			
+	override method interpretaBien(unaCancion){
+		return unaCancion.tieneMasDe(300)||super(unaCancion)
+	}	
 	
 }
