@@ -1,0 +1,57 @@
+import luisAlberto.*
+import Cancion.*
+import lunaPark.*
+import trastienda.*
+import Presentacion.*
+import VocalistaPopular.*
+import MusicoDeGrupo.*
+import Album.*
+
+describe "test del cantante joaquin"{
+	var laFamilia
+	var cisne
+	var presentacionLunaPark
+	var presentacionTrastienda
+	var lucia
+	var joaquin
+	var especialLaFamilia
+	fixture{
+	
+		laFamilia= new Cancion("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		cisne= new Cancion("cisne",312,"Hoy el viento se abria queda vacio el aire una vez mas y el manantial brote y nadie esta aqua y puedo ver que solo estallan las hojas al brillar")
+		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date (17,06,1992),100000,89000)
+		lucia = new VocalistaPopular(70, true, #{}, "familia")
+		joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5)
+		presentacionLunaPark= new Presentacion(20,04,2017,lunaPark,#{joaquin,luisAlberto,lucia})
+		presentacionTrastienda = new Presentacion(15,11,2017,trastienda,#{joaquin})
+
+		
+	}
+	
+	test"saber cual es la habilidad de joaquin si esta en un grupo, deberÃ­a ser 25"{
+		assert.equals(25, joaquin.habilidad())
+	}
+	
+	test"saber cual es la habilidad de joaqun si fuera solista, deberia ser 20"{
+		joaquin.serSolista()
+		assert.equals(20, joaquin.habilidad())
+	}
+	
+	test"saber si joaquin interpreta bien la cancion la familia"{
+		assert.notThat(joaquin.interpretaBien(laFamilia))
+	}
+	
+	test"saber si joaquin interpreta bien la cancion cisne"{
+		assert.that(joaquin.interpretaBien(cisne))
+	}
+	
+	test"cuanto cobra Joaquin por la presentacion del Luna Park, deberia ser 50 (hay mas cantantes) "{
+		assert.equals(50,joaquin.costoDePresentacion(presentacionLunaPark))
+	}
+
+	test "Cuanto cobra Joaquin por la presentacion de la Trastienda del 15/11/2017,actuando sÃ³lo. DeberÃ­a dar 100(actua solo)" {                    
+		assert.equals(100,joaquin.costoDePresentacion(presentacionTrastienda))
+		
+	}
+	
+}
