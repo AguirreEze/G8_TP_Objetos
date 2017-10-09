@@ -1,0 +1,35 @@
+import Cancion.*
+import Album.*
+import Musico.*
+import luisAlberto.*
+import Presentacion.*
+
+describe "test tercer entrega de Luis Alberto"{
+	var cisne
+	var almaDeDiamante
+	var crisantemo
+	var paraLosArboles
+	var justCrisantemo
+	var luisAlberto
+	fixture{
+	cisne = new Cancion("Cisne",312,"Hoy el viento se abri� qued� vac�o el aire una vez m�s y el manantial brot� y nadie est� aqu� y puedo ver que solo estallan las hojas al brillar") 	
+	almaDeDiamante = new Cancion ("Alma de Diamante",216,"Ven a m� con tu dulce luz alma de diamante. Y aunque el sol se nuble despu�s sos alma de diamante. cielo o piel silencio o verdad sos alma de diamante. Por eso ven as� con la humanidad alma de diamante")
+	crisantemo = new Cancion ("Crisantemo",175,"T�came junto a esta pared, yo quede por aqu�... cuando no hubo m�s luz... quiero mirar a trav�s de mi piel... Crisantemo, que se abri�... encuentra el camino hacia el cielo")
+	
+	paraLosArboles = new Album ("Para los Arboles",#{cisne,almaDeDiamante},new Date (31,03,2003),50000,49000)
+	justCrisantemo = new Album ("Just Crisantemo",#{crisantemo},new Date (05,12,2007),28000,27500)
+	
+	luisAlberto = new Musico (8, false, #{paraLosArboles, justCrisantemo})
+	}
+	
+	test "Luis Alberto interpreta bien cisne,una cancion de su autoria"{
+		assert.that(luisAlberto.interpretaBien(cisne))
+	}
+	test "Luis Alberto interpreta bien almaDeDiamante,una cancion de su autoria"{
+		assert.that(luisAlberto.interpretaBien(almaDeDiamante))
+	}
+	test "Luis Alberto interpreta bien crisantemo,una cancion de su autoria"{	
+		assert.that (luisAlberto.interpretaBien(crisantemo))
+	}
+	
+}
