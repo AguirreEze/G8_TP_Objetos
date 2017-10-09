@@ -1,19 +1,31 @@
-import joaquin.*
 import luisAlberto.*
-import lucia.*
 import Cancion.*
 import lunaPark.*
 import trastienda.*
 import Presentacion.*
+import Album.*
+import MusicoDeGrupo.*
+import VocalistaPopular.*
+import Musico.*
 
 describe "test para el precentaciones" {
 	var presentacionLunaPark
 	var presentacionTrastienda
 	var fecha
+	var joaquin 
+	var lucia 
+	var especialLaFamilia
+	var laFamilia 
+	
+	
 	fixture{
-		presentacionLunaPark= new Presentacion(20,04,2017,lunaPark,#{joaquin,luisAlberto,lucia})
-		presentacionTrastienda = new Presentacion(15,11,2017,trastienda,#{joaquin,luisAlberto,lucia})
-	}
+	laFamilia = new Cancion ("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+	especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date (17,06,1992),100000,89000)
+	joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5)	
+	presentacionLunaPark= new Presentacion(20,04,2017,lunaPark,#{joaquin,luisAlberto,lucia})
+	presentacionTrastienda = new Presentacion(15,11,2017,trastienda,#{joaquin,luisAlberto,lucia})
+	lucia = new VocalistaPopular (70,false,#{},"carlitos")
+	} 
 	
 	test "Queremos saber el costo de la presentación del Luna Park,  debe dar 1.550 (50 de Joaquín, 500 de Lucía y 1.000 de Luis Alberto)" {
 		assert.equals(1550, presentacionLunaPark.costoDePresentacion())

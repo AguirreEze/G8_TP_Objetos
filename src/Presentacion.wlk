@@ -1,3 +1,13 @@
+import luisAlberto.*
+import Cancion.*
+import lunaPark.*
+import trastienda.*
+import Presentacion.*
+import Album.*
+import MusicoDeGrupo.*
+import VocalistaPopular.*
+import Musico.*
+
 class Presentacion {
 	
 	var fecha 
@@ -9,6 +19,10 @@ class Presentacion {
 		fecha=new Date(unDia,unMes,unAnio)
 		predio=unPredio
 		cantantes=unosCantantes
+	}
+	
+	method agregarCantante(unCantante){
+		cantantes.add(unCantante)
 	}
 	
 	method cantaSolo(unCantante){
