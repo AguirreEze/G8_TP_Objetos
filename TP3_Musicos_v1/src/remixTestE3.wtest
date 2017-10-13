@@ -1,0 +1,52 @@
+import Remix.*
+import Cancion.*
+import Album.*
+
+
+
+describe "test para probar remix" {
+	var eres
+	var corazonAmericano
+	var cisne
+	var almaDeDiamante
+	var crisantemo
+	var remixAlmaDeDiamante
+	var remixEres
+	var remixCorazonAmericano
+	var remixCisne
+	var remixCrisantemo
+	
+	fixture {
+	eres= new Cancion("eres",145,"Eres lo mejor que me pas� en la vida, no tengo duda, no habr� m�s nada despu�s de ti. Eres lo que le dio brillo al d�a a d�a, y as� ser� por siempre, no cambiar�, hasta el final de mis d�as ")
+	corazonAmericano= new Cancion("corazon americado",154,"Canta coraz�n, canta m�s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto coraz�n, como so�amos")
+	cisne = new Cancion("Cisne",312,"Hoy el viento se abri� qued� vac�o el aire una vez m�s y el manantial brot� y nadie est� aqu� y puedo ver que solo estallan las hojas al brillar") 	
+	almaDeDiamante = new Cancion ("Alma de Diamante",216,"Ven a m� con tu dulce luz alma de diamante. Y aunque el sol se nuble despu�s sos alma de diamante. cielo o piel silencio o verdad sos alma de diamante. Por eso ven as� con la humanidad alma de diamante")
+	crisantemo = new Cancion ("Crisantemo",175,"T�came junto a esta pared, yo quede por aqu�... cuando no hubo m�s luz... quiero mirar a trav�s de mi piel... Crisantemo, que se abri�... encuentra el camino hacia el cielo")
+	
+	remixAlmaDeDiamante = new Remix (almaDeDiamante)
+	remixEres = new Remix (eres)
+	remixCorazonAmericano = new Remix (corazonAmericano)
+	remixCisne = new Remix (cisne)
+	remixCrisantemo = new Remix (crisantemo)
+	
+	}
+	
+	test "Remix eres, debería durar 435 segundos" {
+	assert.equals(435,remixEres.duracion())	
+	}
+	test "Remix corazonAmericano, debería durar 462 segundos"{
+	assert.equals(462,remixCorazonAmericano.duracion())	
+	}
+	test "Remix cisne, debería durar 936 segundos"{
+	assert.equals(936,remixCisne.duracion())	
+	}
+	test "Remix almaDeDiamante, debería durar 648 segundos" {
+	assert.equals(648,remixAlmaDeDiamante.duracion()) 		
+	}
+	test "Remix crisantemo, debería durar 525 segundos"{
+	assert.equals(525,remixCrisantemo.duracion())	
+	}
+	test "Remix Cisne, agregando frase al principio y final" {
+	assert.equals("mueve tu cuerpo baby Hoy el viento se abri� qued� vac�o el aire una vez m�s y el manantial brot� y nadie est� aqu� y puedo ver que solo estallan las hojas al brillar yeah oh yeah",remixCisne.letra())	
+	}
+}
