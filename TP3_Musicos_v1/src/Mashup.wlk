@@ -13,11 +13,15 @@ class Mashup inherits Cancion{
 		}
 
 	method nombre(unasCanciones){
-		var nombre=""
-		unasCanciones.forEach({cancion=>nombre=nombre+cancion.nombre()+" "})
-		return nombre
+		//nombre=""
+		unasCanciones.forEach({cancion=>self.conCat(cancion.nombre()+" ")})
+		return nombre.trim()
 	}
 	
+	method conCat(masTexto){
+		nombre = nombre+masTexto
+		
+	}
 	method cancionMasLarga(unasCanciones){
 		return unasCanciones.max({cancion=>cancion.duracion()})
 	}

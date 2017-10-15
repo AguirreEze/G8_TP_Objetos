@@ -42,12 +42,12 @@ describe "test para probar mashup" {
 	}
 	
 	test "Titulo del mashupCrisantemoYAlmaDiamante,debería concatenar las letras de cada canción que interviene" {
-	assert.equals("Crisantemo Alma De Diamante ", mashupCrisantemoYAlmaDiamante.nombre())	
+	assert.equals("Crisantemo Alma De Diamante", mashupCrisantemoYAlmaDiamante.nombre())	
 		
 	}
 	
 	test "Titulo del mashupAlmaDeDiamanteYCrisantemo,debería concatenar las letras de cada canción que interviene" {
-	assert.equals("Alma De Diamante Crisantemo ", mashupAlmaDeDiamanteYCrisantemo.nombre())	
+	assert.equals("Alma De Diamante Crisantemo", mashupAlmaDeDiamanteYCrisantemo.nombre())	
 		
 	}
 	
