@@ -33,4 +33,21 @@ class Album {
 	method canciones(){
 		return canciones
 	}
+	method cualCancionEsMasLarga(unaCancion, otraCancion){
+		if(unaCancion.duraMasQue(otraCancion)){
+			return unaCancion
+		}else{
+			return otraCancion
+		}	
+	}
+	method cualCancionTieneLetraMasLarga(unaCancion, otraCancion){
+		if(unaCancion.tieneMasLetrasQue(otraCancion)){
+			return unaCancion
+		}else{
+			return otraCancion
+		}
+	}
+	method lasCancionesPoseeenElMismoTitulo(unaCancion, otraCancion){
+		return unaCancion == otraCancion
+	}
 }

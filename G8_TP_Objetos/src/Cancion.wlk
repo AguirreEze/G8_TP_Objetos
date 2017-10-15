@@ -36,9 +36,13 @@ class Cancion {
 	method tieneMasDe(unValor){
 		return duracion > unValor
 	}
+	method duraMasQue(unaCancion){
+		return duracion > unaCancion.duracion()
+	}
+	method tieneMasCantidadDeLetrasQue(unaCancion){
+		return letra.size() > unaCancion.letra().size()
+	}
 }
-
-
 
 
 
