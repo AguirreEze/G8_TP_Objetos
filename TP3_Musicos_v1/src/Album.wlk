@@ -6,22 +6,14 @@ class Album {
 	var fechaLanzamiento
 	var unidadesHechas
 	var unidadesVendidas
-	var compararPor
-	constructor(unTitulo,unasCanciones,unaFecha,hechos,vendidos,_comparacion){
+	constructor(unTitulo,unasCanciones,unaFecha,hechos,vendidos){
 		titulo=unTitulo
 		canciones=unasCanciones
 		fechaLanzamiento=unaFecha
 		unidadesHechas=hechos
 		unidadesVendidas=vendidos
-		compararPor = _comparacion
 	}
-	method unaComparacion(cancion){
-		return compararPor.comparacionPor(cancion)
-	}
-	method comparacionPor(esaComparacion){
-		return canciones.max({ cancion=>self.unaComparacion(cancion)})
-		
-	}
+	
 	
 	
 	
@@ -37,9 +29,10 @@ class Album {
 		return unidadesVendidas>unidadesHechas*0.75
 	}
 	
-	//method cancionMasLarga(){
-	//	return canciones.max({cancion=>cancion.cantidadLetras()})
-	//}
+	method cancionMasLarga(){
+		return canciones.max({cancion=>cancion.cantidadLetras()})
+	}
+	
 	method canciones(){
 		return canciones
 	}

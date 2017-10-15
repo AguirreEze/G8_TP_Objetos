@@ -1,0 +1,55 @@
+import Cancion.*
+import Album.*
+import Mashup.*
+
+
+
+describe "test para probar mashup" {
+	var eres
+	var corazonAmericano
+	var cisne
+	var almaDeDiamante
+	var crisantemo
+	var mashupAlmaDeDiamanteYCrisantemo
+	var mashupCrisantemoYAlmaDiamante
+	
+	
+	fixture {
+	eres= new Cancion("eres",145,"Eres lo mejor que me pasa en la vida, no tengo duda,
+				 no habra mas nada despues de ti. Eres lo que le dio brillo al dia a dia, 
+				y as sera por siempre, no cambiara, hasta el final de mis dias.")
+				
+	corazonAmericano= new Cancion("corazon americado",154,"Canta corazoon, canta mas alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos,
+	 junto corazon, como soniamos.")
+	 
+	cisne = new Cancion("Cisne",312,"Hoy el viento se abria queda vacio el aire una vez mas y el manantial brota y nadie esta aqui y 
+	puedo ver que solo estallan las hojas al brillar") 
+		
+	almaDeDiamante = new Cancion ("Alma De Diamante",216,"Ven a mi con t dulce luz alma de diamante. Y aunque el sol se nuble despues sos alma de diamante.
+	 cielo o piel silencio o verdad sos alma de diamante. Por eso ven asi con la humanidad alma de diamante")
+	 
+	crisantemo = new Cancion ("Crisantemo",175,"Tocame junto a esta pared, yo quede por aqui... cuando no hubo mas luz... quiero mirar a travas de mi piel...
+	 Crisantemo, que se abria... encuentra el camino hacia el cielo")
+	 
+	mashupAlmaDeDiamanteYCrisantemo = new Mashup (#{almaDeDiamante,crisantemo})
+
+	mashupCrisantemoYAlmaDiamante = new Mashup (#{crisantemo,almaDeDiamante})
+	
+	}
+	
+	test "Duracion del Mashup mashupAlmaDeDiamanteYCrisantemo va a  ser 216 ya que es la duracion de la mas larga, Alma de diamante" {
+	assert.equals(216,mashupAlmaDeDiamanteYCrisantemo.duracion())
+	}
+	
+	test "Titulo del mashupCrisantemoYAlmaDiamante,debería concatenar las letras de cada canción que interviene" {
+	assert.equals("Crisantemo Alma De Diamante ", mashupCrisantemoYAlmaDiamante.nombre())	
+		
+	}
+	
+	test "Titulo del mashupAlmaDeDiamanteYCrisantemo,debería concatenar las letras de cada canción que interviene" {
+	assert.equals("Alma De Diamante Crisantemo ", mashupAlmaDeDiamanteYCrisantemo.nombre())	
+		
+	}
+	
+	
+}
