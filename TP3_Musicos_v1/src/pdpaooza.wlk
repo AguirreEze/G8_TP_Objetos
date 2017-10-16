@@ -4,28 +4,49 @@ import Cancion.*
 import Album.*
 import Musico.*
 import VocalistaPopular.*
+import noEsHabilidoso.*
 
 object pdpalooza inherits Presentacion(15,12,2017,lunaPark,#{}){
+	
+	var limiteHabilidad=70
 var aliciaEnElPais = new Cancion("Cancion de Alicia en el pais",510,
-"Quién sabe Alicia, este país no estuvo hecho porque sí. Te vas a ir,
- vas a salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, 
+"Quiï¿½n sabe Alicia, este paï¿½s no estuvo hecho porque sï¿½. Te vas a ir,
+ vas a salir pero te quedas, ï¿½dï¿½nde mï¿½s vas a ir? Y es que aquï¿½, 
 sabes el trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti.
- Se acabó ese juego que te hacía feliz.")
+ Se acabï¿½ ese juego que te hacï¿½a feliz.")
 
 	override method agregarCantante(unCantante){
 		
-		if(unCantante.esApto(aliciaEnElPais)){
+		if(self.esApto(unCantante,aliciaEnElPais)){
 			
 			super(unCantante)
 		}
 	}
 	
+	method resticcionHabilidad(unValor){
+		limiteHabilidad=unValor
+	}
 	
 	method canta(unMusico){
 		return cantantes.contains(unMusico)
 	}
 	
-	
+	method esApto(unCantante,unaCancion){
+		if(unCantante.habilidad()<limiteHabilidad){
+		throw new NoEntraAlLola("no es habilidoso")	
+		}
+		
+		if(!unCantante.esCompositor()){
+		throw new NoEntraAlLola("no es compositor")
+		}	
+		
+		 
+		if(!unCantante.interpretaBien(unaCancion)){
+		throw new NoEntraAlLola("no puede interpretar bien  Alicia en el pais")		
+		}
+		
+		return true
+	}
 	
 	
 }

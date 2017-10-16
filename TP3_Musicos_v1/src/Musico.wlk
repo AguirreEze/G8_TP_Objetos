@@ -1,22 +1,18 @@
 //musico generico     SUPERCLASE
 import Album.*
-import noEsHabilidoso.*
+
 class Musico {
-	var limiteHabilidad
 	var habilidad
 	var estaEnGrupo
 	var albumes=#{}
 	
 	constructor(unaHabilidad,unGrupo,susAlbumes){
 		habilidad = unaHabilidad
-		limiteHabilidad=70
 		estaEnGrupo = unGrupo
 		albumes = susAlbumes
 	}
 	
-	method resticcionHabilidad(unValor){
-		limiteHabilidad=unValor
-	}
+	
 	
 	method habilidadMayorA(unValor){
 		return habilidad >=unValor
@@ -33,22 +29,6 @@ class Musico {
 		return (self.esDeMiAutoria(unaCancion)||habilidad>60)
 	}
 	
-	method esApto(unaCancion){
-		if(self.habilidad()<limiteHabilidad){
-		throw new NoEntraAlLola("no es habilidoso")	
-		}
-		
-		if(!self.esCompositor()){
-		throw new NoEntraAlLola("no es compositor")
-		}	
-		
-		 
-		if(!self.interpretaBien(unaCancion)){
-		throw new NoEntraAlLola("no puede interpretar bien  Alicia en el pais")		
-		}
-		
-		return true
-	}
 	
 	
 	
