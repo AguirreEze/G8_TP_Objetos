@@ -12,6 +12,9 @@ object luisAlberto inherits Musico(8,false,#{})  {
 		return 100.min(habilidad*unaGuitarra.valor())
 	}
 	
+	method darAlbumes(unosAlbumes){
+		albumes=unosAlbumes
+	}
 	method valorViejo(unaPresentacion){
 		valorViejo=unaPresentacion.mes()<09
 	}

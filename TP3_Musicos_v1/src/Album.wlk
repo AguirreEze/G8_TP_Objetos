@@ -16,7 +16,9 @@ class Album {
 	
 	
 	
-	
+	method tieneEsteTema(unaCancion){
+		return canciones.contains(unaCancion)
+	}
 	method minimalista(){
 		return canciones.all({cancion=>cancion.esCorto()})
 	}

@@ -31,7 +31,6 @@ class Musico {
 	
 	
 	
-	
 	method compone(){
 		
 		}

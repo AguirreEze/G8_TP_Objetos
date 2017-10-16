@@ -3,9 +3,8 @@ import Cancion.*
 
 class Mashup inherits Cancion{
 	
-	
-	constructor (unasCanciones)=super("",0,""){
 
+	constructor (unasCanciones)=super(" ",0," "){
 		nombre= self.nombre(unasCanciones)
 		duracion=self.cancionMasLarga(unasCanciones).duracion()
 		letra=self.letra(unasCanciones)
@@ -13,13 +12,12 @@ class Mashup inherits Cancion{
 		}
 
 	method nombre(unasCanciones){
-		//nombre=""
-		unasCanciones.forEach({cancion=>self.conCat(cancion.nombre()+" ")})
+		unasCanciones.forEach({cancion=>nombre= nombre+cancion.nombre()+" "})
 		return nombre.trim()
 	}
 	
 	method conCat(masTexto){
-		nombre = nombre+masTexto
+		nombre = masTexto+nombre+" "
 		
 	}
 	method cancionMasLarga(unasCanciones){

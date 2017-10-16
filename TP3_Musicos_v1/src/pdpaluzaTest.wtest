@@ -4,6 +4,10 @@ import Album.*
 import pdpaooza.*
 import VocalistaPopular.*
 import MusicoDeGrupo.*
+import RestriccionHabilidad.*
+import RestriccionGrupo.*
+import RestriccionCompositor.*
+import RestriccionCancion.*
 
 
 describe "test de pdpaluza"{
@@ -21,6 +25,10 @@ describe "test de pdpaluza"{
 	var carlitos
 	var pablo
 	var lolo
+	var restriccionHabilidad
+	var restriccionGrupo
+	var restriccionCompositor
+	var restriccionCancion
 	
 		
 	var aliciaEnElPais
@@ -40,38 +48,68 @@ describe "test de pdpaluza"{
 	fecha=new Date(04,02,2005)
 	
 	aliciaEnElPais = new Cancion("Cancion de Alicia en el pais",510,
-"Quién sabe Alicia, este país no estuvo hecho porque sí. Te vas a ir,
- vas a salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, 
+"Quiï¿½n sabe Alicia, este paï¿½s no estuvo hecho porque sï¿½. Te vas a ir,
+ vas a salir pero te quedas, ï¿½dï¿½nde mï¿½s vas a ir? Y es que aquï¿½, 
 sabes el trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti.
- Se acabó ese juego que te hacía feliz.")
+ Se acabï¿½ ese juego que te hacï¿½a feliz.")
 	
 	laSole = new Album("la sole",#{eres,corazonAmericano},fecha,200000,130000)
 	
-	soledad= new VocalistaPopular(55,false,#{laSole},"amor")
+	soledad= new VocalistaPopular(70,true,#{laSole},"amor")
 	
-	carlitos= new MusicoDeGrupo(90,false,#{},30)
+	carlitos= new MusicoDeGrupo(90,true,#{},30)
 	
-	pablo = new VocalistaPopular(100,false,#{eres},"pokemon carluchooo")
+	pablo = new VocalistaPopular(50,false,#{eres},"pokemon carluchooo")
 	
 	lolo= new MusicoDeGrupo(100,true,#{aliciaEnElPais},50)
+	
+	restriccionHabilidad = new RestriccionHabilidad(80)
+	restriccionGrupo= new RestriccionGrupo(true)
+	restriccionCompositor= new RestriccionCompositor(true)
+	restriccionCancion= new RestriccionCancion()
+	pdpalooza.agregarRestriccion(restriccionHabilidad)
+	pdpalooza.agregarRestriccion(restriccionGrupo)
+	pdpalooza.agregarRestriccion(restriccionCompositor)
+	pdpalooza.agregarRestriccion(restriccionCancion)
+	
+	
 	}
 	
-	test"soledad no entra en pdpalooza, porque tiene menor habilidad que la requerida "{
-		assert.throwsException({pdpalooza.agregarCantante(soledad)
+	
+	test"soledad no entra en pdpalooza, porque tiene menor habilidad que la requerida,80 "{
+		assert.throwsException({pdpalooza.agregarCantante(soledad,aliciaEnElPais)
 			})
 		
 	}
+	test"soledad entra en pdpalooza, porque se modifico la habilidad requerida "{
+		pdpalooza.modificarRestriccion(restriccionHabilidad,20)
+		pdpalooza.agregarCantante(soledad,eres)
+		assert.that(pdpalooza.canta(soledad))
+		
+	}
+	
+	
 	test"carlitos no entra en pdpalooza,porque no tiene ninguna cancion"{
-		assert.throwsException({pdpalooza.agregarCantante(carlitos)
+		assert.throwsException({pdpalooza.agregarCantante(carlitos,aliciaEnElPais)
 			})
 		
 	}
-	test"pablo no entra en pdpalooza,porque no interpreta bien la cancion Alicia en el país" {
-		assert.throwsException({pdpalooza.agregarCantante(pablo)})
+	test"carlitos entra en pdpalooza,porque se elimino la resticcion de ser compositor"{
+		pdpalooza.modificarRestriccion(restriccionCompositor,false)
+		pdpalooza.agregarCantante(carlitos,aliciaEnElPais)
+		assert.that(pdpalooza.canta(carlitos))
+		
+	}
+	
+	test"pablo no entra en pdpalooza,porque no interpreta bien la cancion Alicia en el paï¿½s" {
+		assert.throwsException({pdpalooza.agregarCantante(pablo,aliciaEnElPais)})
 	}
 	
 	test"lolo  entra en pdpalooza,porque cumple con todas las restricciones" {
-		pdpalooza.agregarCantante(lolo)
+		pdpalooza.agregarCantante(lolo,aliciaEnElPais)
 		assert.that(pdpalooza.canta(lolo))
 	}
+	
+	
+	
 }
