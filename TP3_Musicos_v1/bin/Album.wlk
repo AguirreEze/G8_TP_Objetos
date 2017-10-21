@@ -6,25 +6,19 @@ class Album {
 	var fechaLanzamiento
 	var unidadesHechas
 	var unidadesVendidas
-	var compararPor
-	constructor(unTitulo,unasCanciones,unaFecha,hechos,vendidos,_comparacion){
+	constructor(unTitulo,unasCanciones,unaFecha,hechos,vendidos){
 		titulo=unTitulo
 		canciones=unasCanciones
 		fechaLanzamiento=unaFecha
 		unidadesHechas=hechos
 		unidadesVendidas=vendidos
-		compararPor = _comparacion
-	}
-	method unaComparacion(cancion){
-		return compararPor.comparacionPor(cancion)
-	}
-	method comparacionPor(esaComparacion){
-		return canciones.max({ cancion=>self.unaComparacion(cancion)})
-		
 	}
 	
 	
 	
+	method tieneEsteTema(unaCancion){
+		return canciones.contains(unaCancion)
+	}
 	method minimalista(){
 		return canciones.all({cancion=>cancion.esCorto()})
 	}
@@ -37,10 +31,28 @@ class Album {
 		return unidadesVendidas>unidadesHechas*0.75
 	}
 	
-	//method cancionMasLarga(){
-	//	return canciones.max({cancion=>cancion.cantidadLetras()})
-	//}
+	method cancionMasLarga(){
+		return canciones.max({cancion=>cancion.cantidadLetras()})
+	}
+	
 	method canciones(){
 		return canciones
+	}
+	method cualCancionEsMasLarga(unaCancion, otraCancion){
+		if(unaCancion.duraMasQue(otraCancion)){
+			return unaCancion
+		}else{
+			return otraCancion
+		}	
+	}
+	method cualCancionTieneLetraMasLarga(unaCancion, otraCancion){
+		if(unaCancion.tieneMasLetrasQue(otraCancion)){
+			return unaCancion
+		}else{
+			return otraCancion
+		}
+	}
+	method lasCancionesPoseeenElMismoTitulo(unaCancion, otraCancion){
+		return unaCancion == otraCancion
 	}
 }

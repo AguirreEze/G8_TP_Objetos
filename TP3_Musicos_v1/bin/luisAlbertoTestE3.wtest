@@ -18,7 +18,7 @@ describe "test tercer entrega de Luis Alberto"{
 	paraLosArboles = new Album ("Para los Arboles",#{cisne,almaDeDiamante},new Date (31,03,2003),50000,49000)
 	justCrisantemo = new Album ("Just Crisantemo",#{crisantemo},new Date (05,12,2007),28000,27500)
 	
-	luisAlberto = new Musico (8, false, #{paraLosArboles, justCrisantemo})
+	luisAlberto.darAlbumes(#{paraLosArboles, justCrisantemo})
 	}
 	
 	test "Luis Alberto interpreta bien cisne,una cancion de su autoria"{

@@ -10,9 +10,14 @@ class VocalistaPopular inherits Musico{
 	}
 	
 	
-	override method interpretaBien(unaCancion){
-		return unaCancion.contieneLaPalabra(esaPalabra)
+	override method interpretaBien(unaCancion){					
+		return unaCancion.contieneLaPalabra(esaPalabra) || super(unaCancion) 
+				//	self.returnInterpretarBien(unaCancion)
 	}
+	
+//	method returnInterpretarBien(unaCancion) {
+//		return unaCancion.contieneLaPalabra(esaPalabra) || super(unaCancion)  "Sólo se puede utilizar 'super' en un métod que sobrescribe otro"
+//	}
 	
 	method costoDePresentacion(unaPresentacion){
 		if(unaPresentacion.esConcurrido()){

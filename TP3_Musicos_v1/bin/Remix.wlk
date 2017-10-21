@@ -2,17 +2,21 @@ import Cancion.*
 
 class Remix inherits Cancion {
 		
-	constructor (unaCancion,unNombre,unaDuracion,unaLetra)=super(unNombre,unaDuracion,unaLetra){
-		nombre=unNombre
-		duracion=self.remixarDuracion()
-		letra=self.remixarLetra()
-	}
+	/*constructor (unaCancion)=super(unaCancion.nombre(),unaCancion.duracion(),unaCancion.letra()){
+	letra= "mueve tu cuerpo baby " + unaCancion.letra() + " yeah oh yeah"
+	duracion=unaCancion.duracion() * 3
+	}*/
 
+	constructor (unaCancion)=super(unaCancion.nombre(),unaCancion.duracion(),unaCancion.letra()){
 	
-	method remixarLetra(){
-		return "mueve tu cuerpo baby" + unaCancion.unaLetra() + "yeah oh yeah"
 	}
-	method remixarDuracion(){
-		return unaCancion.duracion() * 3
+	
+	override method duracion(){
+		return super() *3
 	}
+	
+	override method letra(){
+		return "mueve tu cuerpo baby " + super() + " yeah oh yeah"
+	}
+	
 }
