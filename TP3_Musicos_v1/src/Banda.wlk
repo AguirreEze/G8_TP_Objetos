@@ -29,6 +29,6 @@ class Banda {
 	}
 	
 	method interpretanBien(unaCancion){
-		return musicos.all({musico=>musico.interpretaBine(unaCancion)})
+		return musicos.all({musico=>musico.interpretaBien(unaCancion)})
 	}
 }
