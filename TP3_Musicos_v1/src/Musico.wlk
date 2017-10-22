@@ -17,7 +17,7 @@ class Musico {
 		albumes = susAlbumes
 	}
 	
-	method cancionesQueSiPuede(unasCanciones){
+	method cancionesQueSiPuedeTocarBien(unasCanciones){
 		return unasCanciones.filter({cancion=>self.interpretaBien(cancion)})
 	}
 	
