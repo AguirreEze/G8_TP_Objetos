@@ -2,6 +2,10 @@ import Musico.*
 import Cancion.*
 import Album.*
 import VocalistaPopular.*
+import Largeros.*
+import Palabreros.*
+import CobroCapasidad.*
+import CobroCantidad.*
 
 
 describe "test individuales de las canciones"{
@@ -10,12 +14,20 @@ describe "test individuales de las canciones"{
 	var laSole
 	var fecha
 	var soledad
+	var comoCobraSoledad
+	var comoInterpretaSoledad
 	fixture{
-	eres= new Cancion("eres",145,"Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días.")
-	corazonAmericano= new Cancion("corazon americado",154,"Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos.")
+	eres= new Cancion("eres",145,"Eres lo mejor que me pasï¿½ en la vida, no tengo duda, no habrï¿½ mï¿½s nada despuï¿½s de ti. Eres lo que le dio brillo al dï¿½a a dï¿½a, y asï¿½ serï¿½ por siempre, no cambiarï¿½, hasta el final de mis dï¿½as.")
+	corazonAmericano= new Cancion("corazon americado",154,"Canta corazï¿½n, canta mï¿½s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazï¿½n, como soï¿½amos.")
 	fecha=new Date(04,02,2005)
+	
 	laSole = new Album("la sole",#{eres,corazonAmericano},fecha,200000,130000)
-	soledad= new VocalistaPopular(55,false,#{laSole},"amor")
+	
+	comoCobraSoledad= new CobroCapasidad(5000,500)
+	comoInterpretaSoledad= new Palabrero("amor")
+	soledad= new VocalistaPopular(70,true,#{laSole},comoCobraSoledad,comoInterpretaSoledad)
+	
+	
 	}
 	
 	test"saber si soledad es minimalista, deberia dar que si"{

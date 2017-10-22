@@ -5,14 +5,29 @@ class Musico {
 	var habilidad
 	var estaEnGrupo
 	var albumes=#{}
+	var comoCobra
+	var comoInterpreta
 	
-	constructor(unaHabilidad,unGrupo,susAlbumes){
+	constructor(unaHabilidad,unGrupo,susAlbumes,cobrar,interpretar){
+		
+		comoCobra=cobrar
+		comoInterpreta=interpretar
 		habilidad = unaHabilidad
 		estaEnGrupo = unGrupo
 		albumes = susAlbumes
 	}
 	
+	method cancionesQueSiPuede(unasCanciones){
+		return unasCanciones.filter({cancion=>self.interpretaBien(cancion)})
+	}
 	
+	method modificarCobro(maneraDeCobro){
+		comoCobra=maneraDeCobro
+	}
+	
+	method modificarInterpretacion(maneraDeInterpretar){
+		comoInterpreta=maneraDeInterpretar
+	}
 	
 	method habilidadMayorA(unValor){
 		return habilidad >=unValor
@@ -26,14 +41,13 @@ class Musico {
 	}
 
 	method interpretaBien(unaCancion){
-		return (self.esDeMiAutoria(unaCancion)||habilidad>60)
+		return (self.esDeMiAutoria(unaCancion)||habilidad>60||comoInterpreta.interepretaBien(unaCancion))
 	}
 	
+	method costoDePresentacion(unaPresentacion){
+		return comoCobra.costoDePresentacion(unaPresentacion,self)
+	}
 	
-	
-	method compone(){
-		
-		}
 	
 	method esDeMiAutoria(unaCancion){
 		return albumes.any({album=>album.tieneEsteTema(unaCancion)})

@@ -3,8 +3,9 @@ import Musico.*
 class  MusicoDeGrupo inherits Musico{
  	var habilidadAAumentar
 	
-	constructor(unaHabilidad,estaEnGrupo,susAlbumes,_habilidadAAumentar)=super(unaHabilidad,estaEnGrupo,susAlbumes){
-		habilidadAAumentar=_habilidadAAumentar
+	constructor(unaHabilidad,estaEnGrupo,susAlbumes,cobrar,intepretar,unaHabilidadAAumentar)= 
+	super(unaHabilidad,estaEnGrupo,susAlbumes,cobrar,intepretar){
+		habilidadAAumentar=unaHabilidadAAumentar
 	}
 	
 	override method habilidad(){
@@ -15,16 +16,8 @@ class  MusicoDeGrupo inherits Musico{
 		}
 	}
 	
-	method costoDePresentacion(unaPresentacion){
-		if(unaPresentacion.cantaSolo(self)){
-			return 100
-		}else{
-			return 50
-		}
-	}
+	
 
-	override method interpretaBien(unaCancion){
-		return unaCancion.tieneMasDe(300)||super(unaCancion)
-	}	
+		
 	
 }

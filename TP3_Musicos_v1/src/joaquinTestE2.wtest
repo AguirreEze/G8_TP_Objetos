@@ -2,17 +2,26 @@ import Musico.*
 import Cancion.*
 import Album.*
 import MusicoDeGrupo.*
+import Largeros.*
+import Palabreros.*
+import CobroCapasidad.*
+import CobroCantidad.*
 
 describe "test respectivos a Joaquin" {
 	
 	var especialLaFamilia
 	var laFamilia 
 	var joaquin 
+	var comoCobraJoaquin
+	var comoInterpretaJoaquin
 	
 	fixture{		
 	laFamilia = new Cancion ("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 	especialLaFamilia = new Album ("Especial La Familia",#{laFamilia},new Date (17,06,1992),100000,89000)
-	joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5)	
+	comoCobraJoaquin= new CobroCantidad(100)
+	comoInterpretaJoaquin= new Larguero(300)
+	joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5,comoCobraJoaquin,comoInterpretaJoaquin)
+		
 	}
 	
 	test "Saber si Joaqu�n es minimalista, deber�a dar que no" {

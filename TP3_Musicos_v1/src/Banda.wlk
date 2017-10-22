@@ -1,31 +1,34 @@
-import Musico.*
-import MusicoDeGrupo.*
-import VocalistaPopular.*
-import Album.*
-import Representante.*
+
 class Banda {
-	var musicos=#{}
+	var musicos
 	var representante
-	var habilidad
-	var cobra
-	var predio
 	
-	constructor(unosMusicos,unRepresentante,unaPresentacion){
-		musicos.add(unosMusicos)
+	constructor(unosMusicos,unRepresentante){
+		musicos=unosMusicos
 		representante=unRepresentante
-		habilidad=self.generarHabilidad()
-		cobra=self.generarCobro(unaPresentacion)
-		predio=unaPresentacion
+	}
+
+	method habilidadBanda(){
+		if(self.hayQuimica()){
+			return self.sumatoria()+(self.sumatoria()* 0.1)
+		}else{
+			return self.sumatoria()
+		}
 	}
 	
-	method generarHabilidad(){
-		return (1.1 * musicos.sum({musico=> musico.habildad()}))
+	method sumatoria(){
+		return musicos.sum({ musico=>musico.habilidad()})
 	}
-	method generarCobro(unaPresentacion){
-		return musicos.sum({musico=> musico.costoDePresentacion(unaPresentacion)})
-					 + representante.costoDePresentacion()
+	
+	method hayQuimica(){
+		return musicos.all({musico=>musico.grupo()})
 	}
-	method interpretaBien(unaCancion){
-		return musicos.all({musico=>musico.interpretaBien(unaCancion)})
+	
+	method cobroBanda(unaPresentacion){
+		return musicos.sum({musico=>musico.costo(unaPresentacion)})+ representante.cobro()
+	}
+	
+	method interpretanBien(unaCancion){
+		return musicos.all({musico=>musico.interpretaBine(unaCancion)})
 	}
 }

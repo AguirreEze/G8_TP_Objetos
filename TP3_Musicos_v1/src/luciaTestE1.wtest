@@ -6,6 +6,10 @@ import Presentacion.*
 import VocalistaPopular.*
 import MusicoDeGrupo.*
 import Album.*
+import Largeros.*
+import Palabreros.*
+import CobroCapasidad.*
+import CobroCantidad.*
 
 describe"test de la cantante lucia"{
 	
@@ -16,12 +20,21 @@ describe"test de la cantante lucia"{
 	var lucia
 	var joaquin
 	var especialLaFamilia
+	var comoCobraLucia
+	var comoInterpretaLucia
+	var comoCobraJoaquin
+	var comoInterpretaJoaquin
 	fixture{
 		laFamilia= new Cancion("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		cisne= new Cancion("cisne",312,"Hoy el viento se abria queda vacio el aire una vez mas y el manantial brote y nadie esta aqua y puedo ver que solo estallan las hojas al brillar")
 		especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date (17,06,1992),100000,89000)
-		lucia = new VocalistaPopular(70, true, #{}, "familia")
-		joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5)
+		comoCobraLucia= new CobroCapasidad(5000,500)
+		comoInterpretaLucia= new Palabrero("familia")
+		lucia = new VocalistaPopular(70, true, #{},comoCobraLucia,comoInterpretaLucia)
+		
+		comoCobraJoaquin= new CobroCantidad(100)
+		comoInterpretaJoaquin= new Larguero(300)
+		joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5,comoCobraJoaquin,comoInterpretaJoaquin)
 		presentacionLunaPark= new Presentacion(20,04,2017,lunaPark,#{joaquin,luisAlberto,lucia})
 		presentacionTrastienda = new Presentacion(15,11,2017,trastienda,#{joaquin,luisAlberto,lucia})
 	

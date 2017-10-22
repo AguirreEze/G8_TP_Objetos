@@ -1,10 +1,10 @@
 import Musico.*
 
-class Imparero inherits Musico{
+class Imparero {
 	
-
-	override method interpretaBien(unaCancion){
-		return (unaCancion.duracion().even(	) || super(unaCancion))
+	
+	method interpretaBien(unaCancion,susGustos){
+		return !unaCancion.duracion().even()
 	}
 	
 

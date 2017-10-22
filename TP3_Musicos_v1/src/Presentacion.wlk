@@ -21,6 +21,14 @@ class Presentacion {
 		cantantes=unosCantantes
 	}
 	
+	method cualEsTuMagia(){
+		return  cantantes.sum({ musico=>musico.habilidad()})
+	
+	}
+	
+	method fecha(){
+		return fecha
+	}
 	method agregarCantante(unCantante){
 		cantantes.add(unCantante)
 	}

@@ -7,5 +7,7 @@ object lunaPark {
 	}
 
 
-
+	method capacidad(unafecha){
+		return capacidad
+	}
 }

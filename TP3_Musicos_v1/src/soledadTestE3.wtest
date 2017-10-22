@@ -2,6 +2,11 @@ import Musico.*
 import Cancion.*
 import Album.*
 import VocalistaPopular.*
+import Largeros.*
+import Palabreros.*
+import CobroCapasidad.*
+import CobroCantidad.*
+
 
 
 describe "test para Soledad"{
@@ -10,6 +15,8 @@ describe "test para Soledad"{
 	var laSole
 	var fecha
 	var soledad
+	var comoCobraSoledad
+	var comoInterpretaSoledad
 	fixture{
 	eres= new Cancion("eres",145,"Eres lo mejor que me pas� en la vida, no tengo duda, no habr� m�s nada despu�s de ti. Eres lo que le dio brillo al d�a a d�a, y as� ser� por siempre, no cambiar�, hasta el final de mis d�as.")
 	corazonAmericano= new Cancion("corazon americado",154,"Canta coraz�n, canta m�s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto coraz�n, como so�amos.")
@@ -17,7 +24,11 @@ describe "test para Soledad"{
 	
 	laSole = new Album("la sole",#{eres,corazonAmericano},fecha,200000,130000)
 	
-	soledad= new VocalistaPopular(55,false,#{laSole},"amor")
+	
+	comoCobraSoledad= new CobroCapasidad(5000,500)
+	comoInterpretaSoledad= new Palabrero("amor")
+	soledad= new VocalistaPopular(70,true,#{laSole},comoCobraSoledad,comoInterpretaSoledad)
+	
 	}
 	
 	test"Soledad interpreta bien eres,una cancion de su autoria"{
