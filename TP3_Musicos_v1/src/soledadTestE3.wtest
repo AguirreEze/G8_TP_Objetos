@@ -4,7 +4,7 @@ import Album.*
 import VocalistaPopular.*
 import Largeros.*
 import Palabreros.*
-import CobroCapasidad.*
+import CobroCapacidad.*
 import CobroCantidad.*
 
 
@@ -25,7 +25,7 @@ describe "test para Soledad"{
 	laSole = new Album("la sole",#{eres,corazonAmericano},fecha,200000,130000)
 	
 	
-	comoCobraSoledad= new CobroCapasidad(5000,500)
+	comoCobraSoledad= new CobroCapacidad(5000,500)
 	comoInterpretaSoledad= new Palabrero("amor")
 	soledad= new VocalistaPopular(70,true,#{laSole},comoCobraSoledad,comoInterpretaSoledad)
 	
