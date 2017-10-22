@@ -4,7 +4,7 @@ import Album.*
 import MusicoDeGrupo.*
 import Largeros.*
 import Palabreros.*
-import CobroCapasidad.*
+import CobroCapacidad.*
 import CobroCantidad.*
 
 describe "test respectivos a Joaquin" {
