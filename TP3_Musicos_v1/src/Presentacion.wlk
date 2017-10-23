@@ -7,6 +7,7 @@ import Album.*
 import MusicoDeGrupo.*
 import VocalistaPopular.*
 import Musico.*
+import Banda.*
 
 class Presentacion {
 	
