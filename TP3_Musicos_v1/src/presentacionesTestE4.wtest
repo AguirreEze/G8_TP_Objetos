@@ -1,0 +1,67 @@
+import trastienda.*
+import Presentacion.*
+import Album.*
+import MusicoDeGrupo.*
+import VocalistaPopular.*
+import Musico.*
+import Largeros.*
+import Palabreros.*
+import CobroCapacidad.*
+import CobroCantidad.*
+import Banda.*
+import luisAlberto.*
+import Cancion.*
+import Representante.*
+
+describe "test para las nuevas presentaciones" {
+	var presentacionPrixDami
+	var presentacionLaCueva
+	var fecha
+	var joaquin 
+	var lucia 
+	var especialLaFamilia
+	var laFamilia 
+	var comoCobraLucia
+	var comoInterpretaLucia
+	var comoCobraJoaquin
+	var comoInterpretaJoaquin
+	var kike
+	var comoCobraKike
+	var comoInterpretaKike
+	var prixDami           //predio
+	var laCueva			   //predio
+	var soledad
+	var elEternoRetorno   //banda
+	var pimpisole         //banda
+	var luisAlberto
+	var felix //representante
+	var cachorro //representante
+	
+	fixture{
+	laFamilia = new Cancion ("la familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+	especialLaFamilia = new Album("Especial La Familia",#{laFamilia},new Date (17,06,1992),100000,89000)
+	comoCobraLucia= new CobroCapacidad(5000,500)
+	comoInterpretaLucia= new Palabrero("familia")
+	lucia = new VocalistaPopular(70, true, #{},comoCobraLucia,comoInterpretaLucia)
+		
+	comoCobraJoaquin= new CobroCantidad(100)
+	comoInterpretaJoaquin= new Larguero(300)
+	joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5,comoCobraJoaquin,comoInterpretaJoaquin)
+	
+	
+	
+	kike = new MusicoDeGrupo (60,true,#{},20,comoCobraKike,comoInterpretaKike)
+	
+	felix = new Representante (500)
+	cachorro = new Representante (1982)
+	
+	elEternoRetorno = new Banda(#{kike,luisAlberto},felix)
+	pimpisole = new Banda(#{soledad,lucia,joaquin},cachorro)
+	
+	presentacionPrixDami= new Presentacion(30,06,2017,prixDami,#{joaquin,soledad,elEternoRetorno})	
+	presentacionLaCueva = new Presentacion(05,01,2018,laCueva,#{joaquin,luisAlberto,lucia})
+	
+	} 
+	
+	
+	}
