@@ -26,6 +26,11 @@ describe "test para las nuevas presentaciones" {
 	var comoCobraJoaquin
 	var comoInterpretaJoaquin
 	var kike
+	var eres
+	var corazonAmericano
+	var laSole
+	var comoCobraSoledad
+	var comoInterpretaSoledad
 	var comoCobraKike
 	var comoInterpretaKike
 	var prixDami           //predio
@@ -48,9 +53,17 @@ describe "test para las nuevas presentaciones" {
 	comoInterpretaJoaquin= new Larguero(300)
 	joaquin = new MusicoDeGrupo (20,true,#{especialLaFamilia},5,comoCobraJoaquin,comoInterpretaJoaquin)
 	
-	
-	
 	kike = new MusicoDeGrupo (60,true,#{},20,comoCobraKike,comoInterpretaKike)
+	eres= new Cancion("eres",145,"Eres lo mejor que me pas� en la vida, no tengo duda, no habr� m�s nada despu�s de ti. Eres lo que le dio brillo al d�a a d�a, y as� ser� por siempre, no cambiar�, hasta el final de mis d�as.")
+	corazonAmericano= new Cancion("corazon americado",154,"Canta coraz�n, canta m�s alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto coraz�n, como so�amos.")
+	fecha=new Date(04,02,2005)
+	
+	laSole = new Album("la sole",#{eres,corazonAmericano},fecha,200000,130000)
+	
+	
+	comoCobraSoledad= new CobroCapacidad(5000,500)
+	comoInterpretaSoledad= new Palabrero("amor")
+	soledad= new VocalistaPopular(70,true,#{laSole},comoCobraSoledad,comoInterpretaSoledad)
 	
 	felix = new Representante (500)
 	cachorro = new Representante (1982)
@@ -59,9 +72,13 @@ describe "test para las nuevas presentaciones" {
 	pimpisole = new Banda(#{soledad,lucia,joaquin},cachorro)
 	
 	presentacionPrixDami= new Presentacion(30,06,2017,prixDami,#{joaquin,soledad,elEternoRetorno})	
-	presentacionLaCueva = new Presentacion(05,01,2018,laCueva,#{joaquin,luisAlberto,lucia})
+	presentacionLaCueva = new Presentacion(05,01,2018,laCueva,#{pimpisole})
 	
 	} 
-	
-	
+	test "Saber cuál es la magia de la presentación LaCueva, 20+70+70(habilidades de banda Pimpisole)" {
+		assert.equals(160,presentacionLaCueva.cualEsTuMagia())
+	}
+	//test "Saber cuál es la magia de la presentación PrixDami,20+70+60" {
+	//	assert.equals(,presentacionPrixDami.cualEsTuMagia())
+	//}
 	}
