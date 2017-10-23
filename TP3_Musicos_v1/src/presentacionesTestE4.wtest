@@ -12,6 +12,7 @@ import Banda.*
 import luisAlberto.*
 import Cancion.*
 import Representante.*
+import fender.*
 
 describe "test para las nuevas presentaciones" {
 	var presentacionPrixDami
@@ -76,6 +77,7 @@ describe "test para las nuevas presentaciones" {
 	
 	} 
 	test "Saber cuál es la magia de la presentación LaCueva, 20+70+70(habilidades de banda Pimpisole)" {
+		luisAlberto.habilidad(fender)
 		assert.equals(160,presentacionLaCueva.cualEsTuMagia())
 	}
 	//test "Saber cuál es la magia de la presentación PrixDami,20+70+60" {
